@@ -75,8 +75,8 @@ repositories {
 +    version =  '0.1.0'
 + }
 
-- mainClassName = 'App'
-- version = '0.1.0'
++ mainClassName = 'com.quickstart.App'
+
 
 + sourceCompatibility = 1.8
 + targetCompatibility = 1.8
@@ -85,4 +85,19 @@ dependencies {
 +    compile 'org.springframework.boot:spring-boot-starter-web'
 +    testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
+</pre>
+
+4 Run App
+<pre>
+gradlew runBoot 
+# or 
+java -jar libs/gradle-restful-quickstart-base-0.1.0.jar
+</pre>
+
+5 Switch to a different server port
+application.properties
+<pre>
+server.port: 9000
+management.server.port: 9001
+management.server.address: 127.0.0.1
 </pre>

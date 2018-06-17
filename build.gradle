@@ -35,7 +35,8 @@ bootJar {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+//
+mainClassName = 'com.quickstart.App'
 
 
 dependencies {
