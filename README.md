@@ -1,39 +1,88 @@
 # gradle-restful-quickstart
 Gradle spring-boot restful service docker quick start
 
-## initial git project
+## Initial git project
 1. git init
 2. git remote add origin https://github.com/Chehao/gradle-restful-quickstart.git
 
-## create gradle environment 
+## Create gradle environment 
 (https://guides.gradle.org/building-java-applications/)
 1. gradle init --type java-application 
 2. review project files
 3. add ignore file
   <pre>
-    .classpath
-    .gradle
-    .settings
-    .vscode
-    .project
++   .classpath
++   .gradle
++   .settings
++   .vscode
++   .project
   </pre>
-## build
+## Build
 1. gradlew build
 2. review build output folder, it is different from maven build output target and classes folder
 3. test report build/reports/tests/test/index.html
 
-## run application 
+## Run application 
 1. gradlew tasks
 2. gradlew run (mainClassName)
 
 ## IntelliJ import project
-1. add ignore file
+### add ignore file
   <pre>
-    .idea
-    build
-    bin
++    .idea
++    build
++    bin
   </pre>
-2. 
+###. add plugin idea to build.gradle
+<pre>
+plugins {
+...
++  id 'idea'
+}
+</pre>
 
 ## setup spring boot 
 https://spring.io/guides/gs/rest-service/
+
+1 add build script repository mavenCentral()
+<pre>
+
++ buildscript {
++     repositories {
++         mavenCentral()
++     }
++     dependencies {
++         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
++     }
++ }
+
+repositories {
+...
++  mavenCentral()
+}
+</pre>
+
+2 add plugin build.gradle
+<pre>
++ apply plugin: 'org.springframework.boot'
++ apply plugin: 'io.spring.dependency-management'
+</pre>
+
+3 add Jar info and remove version and mainClassName
+<pre>
++ bootJar {
++    baseName = 'gradle-restful-quickstart-base'
++    version =  '0.1.0'
++ }
+
+- mainClassName = 'App'
+- version = '0.1.0'
+
++ sourceCompatibility = 1.8
++ targetCompatibility = 1.8
+
+dependencies {
++    compile 'org.springframework.boot:spring-boot-starter-web'
++    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+</pre>
