@@ -27,5 +27,6 @@ hs_err_pid*
 .settings
 .vscode
 .project
+.idea
 build
 bin
