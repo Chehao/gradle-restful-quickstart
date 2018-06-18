@@ -15,7 +15,7 @@ import java.util.Date;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
 @RestController
-public class GeneralResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 
     @ExceptionHandler(Exception.class)
