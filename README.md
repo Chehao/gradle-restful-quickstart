@@ -41,7 +41,7 @@ plugins {
 }
 </pre>
 
-## setup spring boot 
+## Setup spring boot 
 https://spring.io/guides/gs/rest-service/
 
 1 add build script repository mavenCentral()
@@ -100,4 +100,10 @@ application.properties
 server.port: 9000
 management.server.port: 9001
 management.server.address: 127.0.0.1
+</pre>
+
+## Build Docker image with distributes
+https://docs.docker.com/compose/gettingstarted/
+<pre>
+docker-compose up -d 
 </pre>
