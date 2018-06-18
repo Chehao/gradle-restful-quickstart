@@ -20,7 +20,8 @@ plugins {
     id 'java'
 
     // Apply the application plugin to add support for building an application
-    id 'application'
+    // application will conflict with spring boot runBoot
+    // id 'application'
     id 'eclipse'
     id 'idea'
 
@@ -32,11 +33,11 @@ apply plugin: 'io.spring.dependency-management'
 bootJar {
     baseName = 'gradle-restful-quickstart-base'
     version =  '0.1.0'
+    mainClassName = 'com.quickstart.App'
 }
 
 // Define the main class for the application
-//
-mainClassName = 'com.quickstart.App'
+//mainClassName = 'com.quickstart.App'
 
 
 dependencies {
